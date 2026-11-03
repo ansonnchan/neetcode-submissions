@@ -7,12 +7,14 @@ class Solution:
         #need to first determine how many 
         i = 0 
         
-        while i+k <= len(nums):
+        for i in range(len(nums) - k + 1):
             curr_max = nums[i] #take base max to be first element in the sliding window
-            for _ in range(i, i+k):
+            for j in range(i, i+k):
                 #determine max here
-                curr_max = max(curr_max, nums[_])
+                curr_max = max(curr_max, nums[j])
             
             res.append(curr_max)
             i+=1
         return res
+
+        
